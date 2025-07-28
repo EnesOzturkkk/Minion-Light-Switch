@@ -1,0 +1,161 @@
+body{
+    background-color: rgb(232, 232, 232);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    animation: darkTheme 6s ease infinite;
+}
+
+#container {
+  width: 550px;
+  height: 250px;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes lightTheme {
+    0% {
+        background-color: #fae469;
+    }
+    50% {
+        background-color: #e1c420;
+    }
+    100% {
+        background-color: #fae469;
+    }
+}
+
+@keyframes darkTheme {
+    0% {
+        background-color: rgb(37, 37, 37);
+    }
+    50% {
+        background-color: rgb(99, 99, 99);
+    }
+    100% {
+        background-color: rgb(37, 37, 37);
+    }
+}
+
+/*rgb(173, 97, 97);
+rgb(255, 169, 169);
+*/
+
+h2 {
+    visibility: hidden;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+    width: 162px; 
+    height: 120px;
+}
+
+#darkH2, #lightH2 {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /*background-size: contain;*/
+}
+
+#darkH2 {
+    background-image: url("public/images/firstCloudL.png");
+    filter: drop-shadow(-6px 4px 3px rgba(255, 255, 255, 0.7));
+}
+
+#lightH2 {
+    visibility: visible;
+    background-image: url("public/images/firstCloudR.png");
+    filter: drop-shadow(6px 4px 3px rgba(244, 242, 139, 0.7));
+}
+
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.charimg {
+    width: 75px;
+    filter: drop-shadow(-8px 6px 3px rgb(32, 32, 32));
+}
+
+#light>.charimg {filter: drop-shadow(8px 6px 3px rgb(32, 32, 32));}
+
+.charimg:hover {
+    transform: scale(1.2);
+}
+
+#dark, #light {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#charmin {opacity: 10%;}
+#darkmin {width: 80px;}
+
+#button {
+    width: 280px;
+    border: none; 
+    border-radius: 30px; 
+    cursor: pointer;
+    outline: none; 
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333; 
+    position: relative;
+    top: 90px;
+    display: flex;
+    justify-content: start;
+    /* Neumorphism magic: background and multiple shadows */
+    background-color: #232323; /* Same as body background */
+    box-shadow:
+        -8px -8px 10px rgba(138, 138, 138, 0.7),
+        8px 8px 10px rgba(82, 82, 82, 0.5); 
+    transition: all 1.2s ease-in-out;
+}
+
+#buttonImg {
+    border-radius: 50%;
+    width: 75px;
+    transition: transform 1s ease-in-out; 
+}
+
+#button.moved-right {
+    justify-content: end; /* Butonun içeriğini sağa hizala */
+    transform: rotate(360deg); /* 360 derece dönsün */
+    /* Veya daha hafif bir dönüş isterseniz: */
+    /* transform: rotate(180deg); */
+}
+
+#button.moved-right #buttonImg {
+    transform: rotate(-360deg); /* Buton 360 dönerken resim ters yönde dönsün */
+    /* Veya: transform: rotate(-180deg); */
+}
+
+
+#button:hover {
+    box-shadow:
+        -7px -7px 14px rgba(255, 255, 255, 0.8),
+        7px 7px 14px rgba(174, 174, 192, 0.5);
+    transform: translateY(-2px); /* Slight lift */
+}
+
+/* Active effect: make it "press in" (debossed effect) */
+#button:active {
+    box-shadow:
+        inset 5px 5px 10px rgba(174, 174, 192, 0.4), /* Inner dark shadow */
+        inset -5px -5px 10px rgba(255, 255, 255, 0.7); /* Inner light shadow */
+    transform: translateY(0); /* Reset lift */
+}
+
+
